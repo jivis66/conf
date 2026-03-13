@@ -4,11 +4,11 @@
 
 echo "🚀 开始安装 oh-my-zsh 增强组件..."
 
-# 检查 oh-my-zsh 是否安装
+# 检查 oh-my-zsh 是否安装，未安装则自动安装
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo "❌ 未检测到 oh-my-zsh，请先安装:"
-    echo "   sh -c \"\$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
-    exit 1
+    echo "📦 未检测到 oh-my-zsh，开始自动安装..."
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    echo "✅ oh-my-zsh 安装完成"
 fi
 
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
